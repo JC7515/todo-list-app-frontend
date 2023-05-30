@@ -1,0 +1,77 @@
+
+.Todo__container{
+  width: 100%;
+  height: 65px;
+  border-bottom: 1px solid hsl(233, 14%, 35%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 19px;
+}
+
+
+.CheckboxData__container{
+    min-width: 250px ;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.Label_todo{
+   flex: 1;
+   font-size: 1.1rem;
+   color: hsl(234, 39%, 85%);
+   margin-top: 2.5px;
+   text-decoration: none;
+   /* text-align: start; */
+}
+
+
+.TextDecoration__todo{
+   color: hsl(233, 14%, 35%);
+   text-decoration: line-through;
+}
+
+
+.checkbox__todo{
+    min-width: 20px;
+    min-height: 20px;
+    appearance: none;
+    border-radius: 50%;
+    border: 1px solid  hsl(233, 14%, 35%) ;
+    cursor: pointer;
+ }
+ 
+ 
+ .checkbox__todo:hover{
+   border-radius: 50%;
+   border: 1px solid rgb(87, 221, 255);
+ }
+ 
+ .checkbox__todo:checked{
+   width: 20px;
+   height: 20px;
+   appearance: none;
+   border-radius: 50%;
+   border: transparent ;
+   /* border-image: linear-gradient(to right ,rgb(87, 221, 255), rgb(192, 88, 243)); */
+   background: linear-gradient(to right ,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+   cursor: pointer;
+ }
+ 
+ 
+ .IconCross__container{
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+ }
+
+ .IconCross__container:hover{
+    /* background: cadetblue; */
+    transition: 0.3s;
+ }

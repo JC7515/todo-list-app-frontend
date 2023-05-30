@@ -1,229 +1,660 @@
-.main {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+
+:root.body{
+/*Primary */
+
+--Bright-Blue: hsl(220, 98%, 61%);
+--Check-Background: linear-gradient(to right ,hsl(192, 100%, 67%) to hsl(280, 87%, 65%));
+
+/*Neutral */
+
+/*Light Theme */
+
+--Very-Light-Gray: hsl(0, 0%, 98%);
+--Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+--Light-Grayish-Blue: hsl(233, 11%, 84%);
+--Dark-Grayish-Blue: hsl(236, 9%, 61%);
+--Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+/*Dark Theme */
+
+--Very-Dark-Blue: hsl(235, 21%, 11%);
+--Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+--Light-Grayish-Blue: hsl(234, 39%, 85%);
+--Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+--Dark-Grayish-Blue: hsl(234, 11%, 52%);
+--Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+--Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+}
+
+/**************************************************** Dark Mode *****************************************************/
+
+.Home{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Josefin Sans', sans-serif;
+  background: hsl(235, 21%, 11%);
+  color: hsl(235, 19%, 35%);
+}
+
+/* .DarkMode{
+} */
+
+
+.bgDesktop_img{
+  width: 100%;
+  height: 260px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+
+.SectionApp__container{
+  width: 550px;
+  min-height: 100vh;
+  margin: 0 auto;
+  /* position: relative; */
+  z-index: 3;
+}
+
+
+.SectionData__container{
+  width: 100%;
+  min-height: 230px ;
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+  gap: 35px;
+}
+
+
+.TitleAndBar__container{
+  width: 100%;
+  height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  align-content: flex-start;
 }
 
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
+
+.TitleAndViewMode__container{
   width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
-}
-
-.description a {
+  height: 35px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
-}
 
-.code {
+.titleTodo{
+  font-size: 2.2rem;
   font-weight: 700;
-  font-family: var(--font-mono);
+  letter-spacing: 12px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
-  width: var(--max-width);
-  max-width: 100%;
-}
 
-.card {
-  padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
-}
-
-.card span {
-  display: inline-block;
-  transition: transform 200ms;
-}
-
-.card h2 {
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-}
-
-.card p {
-  margin: 0;
-  opacity: 0.6;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  max-width: 30ch;
-}
-
-.center {
+.BarInsertTodo__Container{
+  width: 100%;
+  height: 60px;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  position: relative;
-  padding: 4rem 0;
+  gap: 17px;
+  background: hsl(235, 24%, 19%);
+  padding: 0px 18px;
+  flex-wrap:wrap;
+  border-radius: 5px;
+  box-shadow: 0 11px 20px hsl(235, 21%, 11%);
 }
 
-.center::before {
-  background: var(--secondary-glow);
+
+.Checkbox__bar{
+  width: 20px;
+  height: 20px;
+  appearance: none;
   border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -400px;
+   border: 1px solid hsl(234, 11%, 52%) ;
+   cursor: pointer;
+  }
+
+  /* .Checkbox__bar:after{
+    font-family: 'Font Awesome 5 Free' ;
+    font-weight: 900;
+    content: "\f00c";
+    font-size: 50px;
+    color: white;
+  } */
+  
+
+.Checkbox__bar:hover{
+  border-radius: 50%;
+  border: 1px solid rgb(87, 221, 255);
 }
 
-.center::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
+.Checkbox__bar:checked{
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border-radius: 50%;
+  border: transparent ;
+  /* border-image: linear-gradient(to right ,rgb(87, 221, 255), rgb(192, 88, 243)); */
+  background: linear-gradient(to right ,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  cursor: pointer;
 }
 
-.center::before,
-.center::after {
-  content: '';
-  left: 50%;
-  position: absolute;
-  filter: blur(45px);
-  transform: translateZ(0);
+
+
+.Bar__todo{
+   flex: 1;
+   height: 100%;
+   border: transparent;
+   background: transparent;
+   outline: none;
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 1.05rem;
+   font-weight: 400;
+   color:  hsl(234, 39%, 85%);
+   caret-color: hsla(192, 100%, 67%, 0.699);
 }
 
-.logo {
-  position: relative;
-}
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-  }
 
-  .card:hover span {
-    transform: translateX(4px);
-  }
+.ListAndOptions__container{
+  width: 100%;
+  min-height: 50px;
+  background: hsl(235, 24%, 19%);
+  border-radius: 5px;
+  box-shadow: 0 11px 29px hsl(235, 21%, 11%);
 }
 
-@media (prefers-reduced-motion) {
-  .card:hover span {
-    transform: none;
-  }
+
+.listTodo__container{
+  width: 100%;
+  min-height: 0px;
 }
 
-/* Mobile */
-@media (max-width: 700px) {
-  .content {
-    padding: 4rem;
+
+.BarOptions__container{
+  width: 100%;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 26px;
+}
+
+
+.countOfTodos{
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: hsl(233, 14%, 35%) ;
+}
+
+
+.OptionData__container{
+  min-width: 315px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.options__container{
+  min-width: 150px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;  
+  gap: 20px;
+}
+
+
+.all__Option{
+  background: transparent;
+  border: transparent;
+  color: hsla(235, 100%, 67%, 0.829);
+}
+
+
+.active__Option{
+  background: transparent;
+  border: transparent;
+  color: hsl(233, 14%, 35%);
+}
+
+
+.completed__Option{
+  background: transparent;
+  border: transparent;
+  color: hsl(233, 14%, 35%);
+}
+
+
+.clear__Option{
+  background: transparent;
+  border: transparent;
+  color: hsl(233, 14%, 35%);
+}
+
+
+
+
+.active__Option:hover{
+  background: transparent;
+  border: transparent;
+  color: white;
+}
+
+
+.completed__Option:hover{
+  background: transparent;
+  border: transparent;
+  color: white;
+}
+
+
+.clear__Option:hover{
+  background: transparent;
+  border: transparent;
+  color: white;
+}
+
+
+
+.Bottom__message{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: hsl(233, 14%, 35%);
+}
+
+
+
+/**************************************************** Ligth Mode *****************************************************/
+
+
+.HomeLightMode{
+  background-color: rgba(255, 255, 255, 0.975);
+  color: hsl(234, 39%, 85%);
+}
+
+.ListAndOptions__containerLightMode{
+  background-color: white;
+  box-shadow: 0px 10px 25px 0px hsl(233, 11%, 84%);
+}
+
+
+.countOfTodosLightMode{
+  color: hsl(234, 11%, 52%);
+}
+
+
+.BarInsertTodo__ContainerLightMode{
+  background-color: white;
+  box-shadow: 0px 25px 25px transparent;
+}
+
+
+.Bar__todoLightMode{
+  color: hsl(233, 14%, 35%);
+}
+
+
+.active__Option{
+  background: transparent;
+  border: transparent;
+  color: hsl(236, 9%, 61%);
+}
+
+
+.completed__Option{
+  background: transparent;
+  border: transparent;
+  color: hsl(236, 9%, 61%);
+}
+
+
+.clear__Option{
+  background: transparent;
+  border: transparent;
+  color: hsl(236, 9%, 61%);
+}
+
+
+
+.active__OptionLightMode:hover{
+  background: transparent;
+  border: transparent;
+  color: hsl(235, 19%, 35%);
+}
+
+
+.completed__OptionLightMode:hover{
+  background: transparent;
+  border: transparent;
+  color: hsl(235, 19%, 35%);
+}
+
+
+.clear__OptionLightMode:hover{
+  background: transparent;
+  border: transparent;
+  color: hsl(235, 19%, 35%);
+}
+
+
+
+
+/**************************************** Responsive Desing Mobile Screen **********************************************/
+
+
+
+/**************** Screen 375 x 812 *******************/
+
+@media screen and (max-width:376px) and (max-height:813px){
+  
+  /********************* Measures of Container *********************************/
+
+  .SectionApp__container{
+    width: 90%;
+    min-height: 100vh;
+    margin: 0 auto;
+    /* position: relative; */
+    z-index: 3;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
-    text-align: center;
-  }
 
-  .card {
-    padding: 1rem 2.5rem;
-  }
-
-  .card h2 {
-    margin-bottom: 0.5rem;
-  }
-
-  .center {
-    padding: 8rem 0 6rem;
-  }
-
-  .center::before {
-    transform: none;
-    height: 300px;
-  }
-
-  .description {
-    font-size: 0.8rem;
-  }
-
-  .description a {
-    padding: 1rem;
-  }
-
-  .description p,
-  .description div {
-    display: flex;
-    justify-content: center;
-    position: fixed;
+  /********************* Screen Dark Mode 375 x 812 *********************************/
+   
+  .TitleAndBar__container{
     width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
   }
 
-  .description p {
+  .titleTodo{
+    font-size: 1.95rem;
+  }
+
+  .BarInsertTodo__Container{
+    width: 100%;
+    height: 50px;
+    padding: 0px 23px;
+  }
+
+  .Bar__todo{
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+
+
+  .groupsBlocks__container{
+    width: 100%;
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center ;
+    background-color: hsl(235, 21%, 11%);
+  }
+
+  .counterAndClearCompleted__Container{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    inset: 0 0 auto;
-    padding: 2rem 1rem 1.4rem;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
-    background-clip: padding-box;
-    backdrop-filter: blur(24px);
+    padding: 0px 23px;
+    background-color: hsl(235, 24%, 19%);
   }
 
-  .description div {
-    align-items: flex-end;
-    pointer-events: none;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
-    z-index: 1;
+  .clear__Option{
+    color: hsl(233, 14%, 35%);
+  }
+  
+  
+  .optionsGroup__container{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(235, 24%, 19%);
+  }
+
+  .options__container{
+    width: 50%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .all__Option, .active__Option, .completed__Option{
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  
+  .active__Option, .completed__Option{
+    color: hsl(233, 14%, 35%);
+  }
+
+  /********************* Screen Light Mode 375 x 812 *********************************/
+  /* background-color: rgba(255, 255, 255, 0.975);
+  color: hsl(234, 39%, 85%); */
+  
+  .groupsBlocks__containerLightMode{
+    background-color: rgba(255, 255, 255, 0.975);
+  }
+
+  .counterAndClearCompleted__ContainerLightMode{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 23px;
+    background-color: white;
+    box-shadow: 0px 6px 20px 2px hsla(233, 11%, 84%, 0.59);
+  }
+
+  .optionsGroup__containerLightMode{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+
+  .countOfTodosLightMode{
+    color: hsl(236, 9%, 61%);
+  }
+  
+  .clear__OptionLightMode{
+    color: hsl(236, 9%, 61%);
+  }
+
+  .active__OptionLightMode, .completed__OptionLightMode{
+    color: hsl(236, 9%, 61%);
+  }
+
+
+}
+
+/**************** Screen 360 x 825 *******************/
+
+@media screen and (max-width:361px) and (max-height:826px){
+  
+  /********************* Measures of Container *********************************/
+
+  .SectionApp__container{
+    width: 90%;
+    min-height: 100vh;
+    margin: 0 auto;
+    /* position: relative; */
+    z-index: 3;
+  }
+
+
+
+  /********************* Screen Dark Mode 360 x 825 *********************************/
+   
+  .TitleAndBar__container{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+  }
+
+  .titleTodo{
+    font-size: 1.95rem;
+  }
+
+  .BarInsertTodo__Container{
+    width: 100%;
+    height: 50px;
+    padding: 0px 23px;
+  }
+
+  .Bar__todo{
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+
+
+  .groupsBlocks__container{
+    width: 100%;
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center ;
+    background-color: hsl(235, 21%, 11%);
+  }
+
+  .counterAndClearCompleted__Container{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 23px;
+    background-color: hsl(235, 24%, 19%);
+  }
+
+  .clear__Option{
+    color: hsl(233, 14%, 35%);
+  }
+  
+  
+  .optionsGroup__container{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(235, 24%, 19%);
+  }
+
+  .options__container{
+    width: 50%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .all__Option, .active__Option, .completed__Option{
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  
+  .active__Option, .completed__Option{
+    color: hsl(233, 14%, 35%);
+  }
+
+
+
+  /********************* Screen Light Mode 360 x 825 *********************************/
+  /* background-color: rgba(255, 255, 255, 0.975);
+  color: hsl(234, 39%, 85%); */
+  
+  .groupsBlocks__containerLightMode{
+    background-color: rgba(255, 255, 255, 0.975);
+  }
+
+  .counterAndClearCompleted__ContainerLightMode{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 23px;
+    background-color: white;
+    box-shadow: 0px 6px 20px 2px hsla(233, 11%, 84%, 0.59);
+  }
+
+  .optionsGroup__containerLightMode{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+
+  .countOfTodosLightMode{
+    color: hsl(236, 9%, 61%);
+  }
+  
+  .clear__OptionLightMode{
+    color: hsl(236, 9%, 61%);
+  }
+
+  .active__OptionLightMode, .completed__OptionLightMode{
+    color: hsl(236, 9%, 61%);
   }
 }
 
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
-}
 
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
+/**************** Screen 360 x 640 *******************/
 
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
-}
+@media screen and (max-width:361px) and (max-height:641px){
 
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+  /********************* Screen Dark Mode 360 x 640 *********************************/
+  
+  
+  /********************* Screen Light Mode 360 x 640 *********************************/
+  
 }
