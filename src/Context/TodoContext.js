@@ -129,7 +129,7 @@ const TodoContextProvider = ({children}) => {
         console.log(countItem)
 
         
-        fetch(`http://localhost:4500/ClearCompleted`, {
+        fetch(`${procces.env.API_URL}/ClearCompleted`, {
             method: 'DELETE'
         })
         .then(resp => resp.json())
@@ -167,7 +167,7 @@ const TodoContextProvider = ({children}) => {
         ArrTodoAllFunc.push(newTodoObject)
         SetArrTodo(ArrTodoAllFunc)
         
-        fetch(`http://localhost:4500/Post`, {
+        fetch(`${procces.env.API_URL}/Post`, {
             
             method:'POST',
             body: JSON.stringify(newTodoObject),
@@ -207,7 +207,7 @@ const TodoContextProvider = ({children}) => {
 
         }, 500)    
         
-        fetch("http://localhost:4500/")
+        fetch(`${process.env.API_URL}/`)
         .then((resp) => resp.json())
         .then((data) => {
             console.log(data)
