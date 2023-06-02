@@ -45,7 +45,7 @@ const Todo = ({idTodo, completedTodo, labelTodo}) => {
     console.log(newTodoValues)
 
     
-    fetch(`${process.env.API_URL}/Put/${idTodo}`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Put/${idTodo}`, {
       method: 'PUT',
       body: JSON.stringify(newTodoValues),
       headers: {
@@ -102,7 +102,7 @@ const Todo = ({idTodo, completedTodo, labelTodo}) => {
     SetArrTodoAllFunc(newArr)
     SetArrTodo(newArr)
 
-    fetch(`${process.env.API_URL}}/Delete/${idTodo}`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}}/Delete/${idTodo}`, {
       method: 'DELETE'
     })
     .then(resp => resp.json())
