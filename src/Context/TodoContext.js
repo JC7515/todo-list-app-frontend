@@ -10,14 +10,13 @@ const TodoContextProvider = ({children}) => {
          
     
     
-    
     const [countItem, SetCountItem] = useState(() => {
         if (typeof window !== 'undefined') {
             const storedCountItem = Number(localStorage.getItem('countItem'));
             return storedCountItem || 0;
         }
         return 0;
-      })
+    })
     const [Arrtodo, SetArrTodo] = useState([])
     const [ArrTodoAllFunc, SetArrTodoAllFunc] = useState()
     const [newTodo, SetNewTodo] = useState()
@@ -30,7 +29,7 @@ const TodoContextProvider = ({children}) => {
     
     const textInput     = useRef()
     const checkboxInput = useRef()
-   
+    
     /************* Light Mode Ref *************/
     const homeElem                   = useRef()
     const TodoText                   = useRef()
@@ -45,14 +44,14 @@ const TodoContextProvider = ({children}) => {
     const groupBlocksMobileDesing    = useRef()
     const BlockOneMobileDesign       = useRef()
     const BlockTwoMobileDesign       = useRef()   
-
-
+    
+    
     const LogicOfChangeTheme = () => {
         
         if(window.innerWidth < 600){
-        BlockOneMobileDesign.current.classList.toggle(styles.counterAndClearCompleted__ContainerLightMode)
-        BlockTwoMobileDesign.current.classList.toggle(styles.optionsGroup__containerLightMode)
-        groupBlocksMobileDesing.current.classList.toggle(styles.groupsBlocks__containerLightMode)
+            BlockOneMobileDesign.current.classList.toggle(styles.counterAndClearCompleted__ContainerLightMode)
+            BlockTwoMobileDesign.current.classList.toggle(styles.optionsGroup__containerLightMode)
+            groupBlocksMobileDesing.current.classList.toggle(styles.groupsBlocks__containerLightMode)
         }
         
         homeElem.current.classList.toggle(styles.HomeLightMode)
@@ -67,25 +66,25 @@ const TodoContextProvider = ({children}) => {
         // todoContainer.current.classList.toggle(style.Todo__containerLightMode)
         
     }
-
+    
     const SwitchToDarkModeOrLightModeFunc = () => {
         SetIsDarkModeActive(!isDarkModeActive)
         
         console.log()
-
+        
         if(isDarkModeActive == true){
             localStorage.setItem('themeApp', 'Ligth')
         }else if(isDarkModeActive == false){
             localStorage.setItem('themeApp', 'Black')
         }
-
+        
         
         // if(toString(localStorage.getItem('themeApp')) === 'Black'){
-        //     localStorage.setItem('themeApp', 'Ligth')
-        // }else if(toString(localStorage.getItem('themeApp')) === 'Ligth'){
+            //     localStorage.setItem('themeApp', 'Ligth')
+            // }else if(toString(localStorage.getItem('themeApp')) === 'Ligth'){
         //     localStorage.setItem('themeApp', 'Black')
         // }
-
+        
         LogicOfChangeTheme()
     }
     
@@ -99,8 +98,8 @@ const TodoContextProvider = ({children}) => {
     const ALLFilterFunc = () => {
        SetArrTodo(ArrTodoAllFunc)   
     }
-
-
+    
+    
     const ActiveFilterFunc = () => {
         SetArrTodo(ArrTodoAllFunc.filter( todo => todo.completed === false))
     }
@@ -109,34 +108,34 @@ const TodoContextProvider = ({children}) => {
     const CompletedFilterFunc = () => {
         SetArrTodo(ArrTodoAllFunc.filter( todo => todo.completed === true))
     }
-
-
+    
+    
     const ClearCompletedFunc = () => {
-
+        
         const arrFilterTodoFalse = ArrTodoAllFunc.filter( todo => todo.completed === false)
         
         SetArrTodo(arrFilterTodoFalse)
         SetArrTodoAllFunc(arrFilterTodoFalse)
-
-
+        
+        
         const todosCompletedToDeleted = countItem - arrFilterTodoFalse.length;
-
+        
         const countItemValue = countItem - todosCompletedToDeleted  
         SetCountItem(countItemValue)
         localStorage.setItem('countItem', countItemValue)
-
-
-        console.log(countItem)
-
         
-        fetch(`${procces.env.NEXT_PUBLIC_API_URL}/ClearCompleted`, {
+        
+        console.log(countItem)
+        
+        
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/ClearCompleted`, {
             method: 'DELETE'
         })
         .then(resp => resp.json())
         .catch(err => console.error(err))
         
     }
-
+    
     
     
     
@@ -167,7 +166,7 @@ const TodoContextProvider = ({children}) => {
         ArrTodoAllFunc.push(newTodoObject)
         SetArrTodo(ArrTodoAllFunc)
         
-        fetch(`${procces.env.NEXT_PUBLIC_API_URL}/Post`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/Post`, {
             
             method:'POST',
             body: JSON.stringify(newTodoObject),
@@ -198,13 +197,13 @@ const TodoContextProvider = ({children}) => {
         if(!localStorage.getItem('themeApp')){
             localStorage.setItem('themeApp', 'Black')
         }
-
+        
         setTimeout(()=>{
             
             if(localStorage.getItem('themeApp') == "Ligth"){
                 SwitchToDarkModeOrLightModeFunc()
             }
-
+            
         }, 500)    
         
         fetch(`${process.env.NEXT_PUBLIC_API_URL}/`)
