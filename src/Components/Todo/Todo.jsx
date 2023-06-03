@@ -102,7 +102,7 @@ const Todo = ({idTodo, completedTodo, labelTodo}) => {
     SetArrTodoAllFunc(newArr)
     SetArrTodo(newArr)
 
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}}/Delete/${idTodo}`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/Delete/${idTodo}`, {
       method: 'DELETE'
     })
     .then(resp => resp.json())
